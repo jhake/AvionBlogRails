@@ -1,21 +1,9 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.id %></td>
-        <td><%= article.name %></td>
-        <td><%= article.body %></td>
-        <td><%= link_to article.id, show_article_path(article.id) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article.id) %></td>
-      <tr>
-    <% end %>
-  </tbody>
-</table>
-<%=  link_to 'New Article', new_article_path %>
+<%= link_to "New Article", new_article_path, class: 'button' %>
+
+<% @articles.each do |article| %>
+  <div class="article-item">
+    <h3><%= link_to article.name, show_article_path(article.id) %></h3>
+    <p><%= article.body %></p>
+    <%= link_to 'Edit', edit_article_path(article.id) %>
+  </div>
+<% end %>

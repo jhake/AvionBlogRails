@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="container">
+        <h1>Avion Rails Blog</h1>
+        <ul class="nav navbar-nav">
+          <li>Home</li>
+          <li class="active"><a href="#">Articles</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
